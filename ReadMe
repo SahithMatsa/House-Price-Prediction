@@ -1,0 +1,50 @@
+🏡 UK House Market Analysis (1995–2019)
+
+📊 Project Overview
+
+This project analyzes housing market trends in England and Wales using historical sales data from 1995 to 2019. The aim is to provide insights for real estate businesses and investors to identify profitable opportunities, understand market risks, and make data-driven decisions—especially in economically uncertain periods like the 2008 financial crash.
+
+📁 Dataset
+
+Source: HM Land Registry via Kaggle
+Years Covered: 1995–2019
+Size: ~4.5 GB (~25 million records)
+Attributes: 16 fields including transaction date, price paid, property type, location data, and tenure type.
+🧹 Data Cleaning and Preprocessing
+
+Key steps taken to refine the dataset:
+
+Removed fields irrelevant to macro-level analysis (e.g., SAON, PAON, Postcode).
+Extracted time dimensions (year, month, quarter, week).
+Addressed missing values and standardized formats.
+Final dataset: ~4.5 million records with 14 refined attributes.
+🧱 Data Modeling
+
+A dimensional model was implemented in PostgreSQL to support analytical queries:
+
+Fact Table: property_sales
+Dimension Tables: date_dimension, county_dimension, district_dimension, towncity_dimension, propertytype_dimension, oldnew_dimension, categorytype_dimension
+💡 Business Questions & Key Findings
+
+📌 Q1: How did the 2008 financial crisis affect house prices?
+Analysis: Compared total and average prices before and after 2008.
+Findings:
+Severe price drops occurred between Q4 2008 and Q1 2009.
+Some counties (e.g., Stoke-on-Trent) recovered quickly, showing economic resilience.
+Towns showed more volatility than counties.
+📌 Q2: Which regions and property types were most affected?
+Top impacted counties: Cheshire East (-30.4%), County Durham (-19.9%), etc.
+Insights:
+Old vs. new property trends diverged across counties.
+Ravenglass was a rare outlier with a +45.25% price increase post-crisis.
+📌 Q3: What were the highest monthly sale values in London?
+Findings:
+Prices peaked mid-2007, followed by a sharp decline.
+Lowest point: January 2009, with total monthly sales at ~£774M.
+🛠️ Technologies Used
+
+Python (pandas, matplotlib, seaborn)
+PostgreSQL with pgAdmin
+SQLAlchemy & ipython-sql
+Jupyter Notebook
+Linux/Unix Shell Scripting
